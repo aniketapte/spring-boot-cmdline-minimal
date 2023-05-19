@@ -1,26 +1,25 @@
 plugins {
-    id 'org.springframework.boot' version '2.3.4.RELEASE' // Gradle plugin: will need version update
-    id 'io.spring.dependency-management' version '1.0.10.RELEASE' // Gradle plugin for dep mgmt: will need version update
+    id 'org.springframework.boot'  version '3.1.0' // Gradle plugin: will need version update
     id 'java' // Creates standalone jar in build/
 }
 
 group = 'com.aniketapte' // Base group; project name and version are in settings.gradle and gradle.properties respectively
 
-sourceCompatibility = '1.8'
+apply plugin: 'io.spring.dependency-management'
 
 repositories {
-    mavenCentral() // get stuff from maven
+   mavenCentral() // get stuff from maven
 }
 
 dependencies {
-    // Everything depends on spring boot starter
-    implementation 'org.springframework.boot:spring-boot-starter:2.3.4.RELEASE'
+    // Everything depends on spring boot starter - no need to give version
+    implementation 'org.springframework.boot:spring-boot-starter'
 
     // additional dependencies go here
     //implementation 'org.jsoup:jsoup:1.13.1'
 
     // test deps
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.3.4.RELEASE'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
